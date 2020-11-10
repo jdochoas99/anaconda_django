@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path
-from .models import *
-
+from .views import *
+app_name = 'products'
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('',chart_select_view, name='main-products-view'),
 ]
