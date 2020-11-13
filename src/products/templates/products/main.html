@@ -13,4 +13,35 @@ bye
 {{purchases | safe}}
 <hr>
 {{ df | safe }}
-{% endblock body %}
+<hr>
+<div class="container-fluid">
+    <form class="ui form" action="" method="POST">
+        <div class="field">
+            <label>Choose a chart type</label>
+            <select class="form-control">
+                <option>----</option>
+                    <div class="menu">
+                        <div value="bar">Bar plot</div>               
+                        <div value="line">Line plot</div>               
+                        <div value="count">Count plot</div>               
+                    </div>
+              </select>
+        </div>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="validationDefault01">Date from: </label>
+                    <input type="date" class="form-control" name="date_from" required>
+                </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationDefault02">Date to: </label>
+                <input type="date" class="form-control" name="date_to" value="Otto" required>
+            </div>
+            <div class="col-5 my-1">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+                
+    </form>
+</div>
+    
+    
+    {% endblock body %}
