@@ -3,27 +3,27 @@
 {% block head %}
 {% endblock head %}
 {% block title %}
-bye
+Performance
 {% endblock title %}
 
 {% block body %}
-<h1>hello world</h1>
-{{products | safe}}
-<hr>
-{{purchases | safe}}
-<hr>
+{% comment %} {{products | safe}} {% endcomment %}
+{% comment %} <hr> {% endcomment %}
+{% comment %} {{purchases | safe}} {% endcomment %}
+{% comment %} <hr> {% endcomment %}
 {{ df | safe }}
 <hr>
+{% csrf_token %}
 <div class="container-fluid">
-    <form class="ui form" action="" method="POST">
+    <form class="ui form" action="" method="POST" >
+    {% csrf_token %}
         <div class="field">
             <label>Choose a chart type</label>
-            <select class="form-control">
+            <select class="form-control" name='sales'>
                 <option>----</option>
-                    <div class="menu">
-                        <div value="bar">Bar plot</div>               
-                        <div value="line">Line plot</div>               
-                        <div value="count">Count plot</div>               
+                <option value="bar">Bar plot</option>               
+                <option value="line">Line plot</option>               
+                <option value="count">Count plot</option>               
                     </div>
               </select>
         </div>
